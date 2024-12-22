@@ -20,5 +20,6 @@ from app1.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_students, name='get_students')
+    path('', get_students, name='get_students'),
+    path('see_marks/<student_id>/', see_marks, name="see_marks")
 ]

@@ -18,11 +18,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
+       <th scope="col">#</th>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Age</th>
       <th scope="col">Department</th>
+      <th scope="col">Age</th>
 
     </tr>
   </thead>
@@ -31,16 +32,18 @@
 
     <tr>
       <th scope="row">{{ forloop.counter }}</th>
-      <td>{{ student.student_id }}</td>
+      <td><a href="{% url 'see_marks' student.student_id %}">
+          {{ student.student_id }}</a></td>
       <td>{{ student.student_name }}</td>
       <td>{{ student.student_email }}</td>
-    <td>{{ student.student_age }}</td>
     <td>{{ student.department }}</td>
+    <td>{{ student.student_age }}</td>
     </tr>
       {% endfor %}
 
   </tbody>
 </table>
+</div>
 
 <nav aria-label="Page navigation example">
   <ul class="pagination">
@@ -59,5 +62,4 @@
         {% endif %}
   </ul>
 </nav>
-
 {% endblock %}
